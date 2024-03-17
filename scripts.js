@@ -6,7 +6,13 @@ document.documentElement.style.cssText = `
 `;
 
 const body = document.querySelector('body');
-body.style.cssText = 'background-color: black; display: flex; flex-direction: column; height: 100%; margin: 0; padding: 0; box-sizing: border-box;';
+body.style.cssText = 'background-color: black; display: flex; flex-direction: column; height: 100%; margin: 0; padding: 0; box-sizing: border-box; align-items: center;';
+
+const newButton = document.createElement('button');
+newButton.textContent = 'Change grid!';
+newButton.style.cssText = 'width: 100px; margin-top: 100px;'
+body.appendChild(newButton)
+
 
 const container = document.createElement('div');
 container.classList.add('container');
@@ -34,3 +40,4 @@ for (let i = 0; i < linkit.length; i++) {
     this.style.backgroundColor = "#ffcc00";
   });
 }
+
