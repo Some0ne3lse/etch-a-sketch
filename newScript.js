@@ -22,6 +22,15 @@ function changeDimensions(gridDimensions) {
   }
 }
 
+function getRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 newButton.onclick = changeDimensions;
 
 const container = document.createElement('div');
@@ -37,7 +46,7 @@ for (let i = 0; i < 16; i++) {
   for (let u = 0; u < 16; u++) {
     const initialRow = document.createElement('div');
     initialRow.classList.add('sixteenRow');
-    initialRow.style.cssText = 'display: flex; flex-direction: column; flex: auto; height: 100%; width: 100%; border: solid black;';
+    initialRow.style.cssText = 'display: flex; flex-direction: column; flex: auto; height: 100%; width: 100%;';
     initialCol.appendChild(initialRow);
   }
 }
@@ -59,7 +68,7 @@ function createGrid(gridDimensions) {
   const drawingBox = document.querySelectorAll('.sixteenRow');
   drawingBox.forEach(item => {
     item.addEventListener('mouseover', () => {
-      item.style.backgroundColor = 'blue';
+      item.style.backgroundColor = getRandomColor();
     })
   })
 }
@@ -67,6 +76,6 @@ function createGrid(gridDimensions) {
 const drawingBox = document.querySelectorAll('.sixteenRow');
 drawingBox.forEach(item => {
   item.addEventListener('mouseover', () => {
-    item.style.backgroundColor = 'blue';
+    item.style.backgroundColor = getRandomColor();
   })
 })
