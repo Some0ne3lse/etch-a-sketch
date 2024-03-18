@@ -42,6 +42,15 @@ for (let i = 0; i < 16; i++) {
   }
 }
 
+
+
+
+// for (const item of document.querySelectorAll('.sixteenRow')) {
+//   item.addEventListener('mouseover', function () {
+//     item.style.color = 'blue';
+//   })
+// }
+
 function createGrid(gridDimensions) {
   while (container.firstChild) container.removeChild(container.firstChild);
   for (let i = 0; i < gridDimensions; i++) {
@@ -56,5 +65,17 @@ function createGrid(gridDimensions) {
       sixteenCol.appendChild(sixteenRow);
     }
   }
-
+  const drawingBox = document.querySelectorAll('.sixteenRow');
+  drawingBox.forEach(item => {
+    item.addEventListener('mouseover', () => {
+      item.style.backgroundColor = 'blue';
+    })
+  })
 }
+
+const drawingBox = document.querySelectorAll('.sixteenRow');
+drawingBox.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    item.style.backgroundColor = 'blue';
+  })
+})
