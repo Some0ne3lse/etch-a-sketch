@@ -2,7 +2,7 @@ document.documentElement.style.cssText = 'height: 100%; margin: 0; padding: 0; b
 
 let gridDimensions;
 
-let toggleButton = true;
+let toggleButton = false;
 
 const body = document.querySelector('body');
 body.style.cssText = 'display: flex; flex-direction: column; height: 100%; margin: 0; padding: 0; box-sizing: border-box; align-items: center;display: flex; flex-direction: column; height: 100%; margin: 0; padding: 0; box-sizing: border-box; align-items: center;';
