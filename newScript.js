@@ -2,14 +2,22 @@ document.documentElement.style.cssText = 'height: 100%; margin: 0; padding: 0; b
 
 let gridDimensions;
 
+let toggleButton = true;
+
 const body = document.querySelector('body');
 body.style.cssText = 'display: flex; flex-direction: column; height: 100%; margin: 0; padding: 0; box-sizing: border-box; align-items: center;display: flex; flex-direction: column; height: 100%; margin: 0; padding: 0; box-sizing: border-box; align-items: center;';
 
 const newButton = document.createElement('button');
 newButton.textContent = 'Change grid!';
 newButton.classList.add('changeGrid')
-newButton.style.cssText = 'width: 100px; margin-top: 100px; margin-bottom: 100px;';
+newButton.style.cssText = 'width: 100px; margin-top: 100px; margin-bottom: 25px;';
 body.appendChild(newButton);
+
+const rainbowButton = document.createElement('button');
+rainbowButton.textContent = 'Rainbows!!';
+rainbowButton.classList.add('rainbowButton')
+rainbowButton.style.cssText = 'width: 100px; margin-top: 25px; margin-bottom: 25px;';
+body.appendChild(rainbowButton);
 
 function changeDimensions(gridDimensions) {
   let newDimension = prompt('Please enter new number no higher than 100');
@@ -32,6 +40,13 @@ function getRandomColor() {
 }
 
 newButton.onclick = changeDimensions;
+rainbowButton.onclick = function () {
+  if (toggleButton == true) {
+    toggleButton = false;
+  } else {
+    toggleButton = true;
+  }
+}
 
 const container = document.createElement('div');
 container.classList.add('container');
@@ -68,7 +83,11 @@ function createGrid(gridDimensions) {
   const drawingBox = document.querySelectorAll('.sixteenRow');
   drawingBox.forEach(item => {
     item.addEventListener('mouseover', () => {
-      item.style.backgroundColor = getRandomColor();
+      if (toggleButton == true) {
+        item.style.backgroundColor = getRandomColor();
+      } else {
+        item.style.backgroundColor = 'blue';
+      }
     })
   })
 }
@@ -76,6 +95,10 @@ function createGrid(gridDimensions) {
 const drawingBox = document.querySelectorAll('.sixteenRow');
 drawingBox.forEach(item => {
   item.addEventListener('mouseover', () => {
-    item.style.backgroundColor = getRandomColor();
+    if (toggleButton == true) {
+      item.style.backgroundColor = getRandomColor();
+    } else {
+      item.style.backgroundColor = 'blue';
+    }
   })
 })
